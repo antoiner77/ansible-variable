@@ -1,0 +1,16 @@
+---
+- hosts: webserver
+  remote_user: root
+  vars:
+    variable: test
+    dico:
+      field1: foo
+      field2: bar
+  vars_prompt:
+    - name: "variable_prompt"
+      prompt: "Foo ?"
+      private: no
+
+  roles:
+    - var
+
